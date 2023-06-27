@@ -25,12 +25,12 @@ function Navbar() {
             
             <li className="nav-item">
               <Link to="destinations" className="nav-link  active ">
-                Destinations
+                Our Destinations
               </Link>
             </li>
             <li className="nav-item">
               <Link to="packages " className="nav-link active ">
-                Packages
+                Our Packages
               </Link>
             </li>
             <li className="nav-item">
