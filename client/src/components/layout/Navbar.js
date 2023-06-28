@@ -44,13 +44,18 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="sign-in" className="nav-link active">
+              <Link to="/sign-in" className="nav-link active">
                 Sign in
               </Link>
             </li>
+            <li className="nav-item" >
+              <button className="nav-link btn btn-danger text-white"  >
+                Sign out
+              </button>
+            </li>
             <li className="nav-item">
               <Link to="my-account" className="nav-link active">
-                Profile
+                Admin
               </Link>
             </li>
           </ul>

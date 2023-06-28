@@ -1,4 +1,11 @@
-.App{
+.landing{
+  min-height: 100vh;
+}
+
+.signin{
+  min-height: 100vh;
+}
+.register{
   min-height: 100vh;
 }
 
