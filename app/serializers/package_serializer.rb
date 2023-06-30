@@ -1,5 +1,4 @@
 class PackageSerializer < ActiveModel::Serializer
-  attributes :id, :location, :description, :duration, :price, :rating, :image
+  attributes :id, :name, :location, :description, :duration, :price, :rating, :image
 
-  
 end
