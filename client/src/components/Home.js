@@ -24,7 +24,7 @@ function Home() {
             <p>
             Welcome to our Tour and Travel website! Discover captivating destinations, exhilarating adventures, and unforgettable experiences. From pristine beaches to breathtaking mountains, our curated packages cater to all travel preferences. Browse our website now and let us transform your travel dreams into a remarkable reality!{" "}
             </p>
-            <Link to="destinations">
+            <Link to="our destinations">
             <button type="button" class="btn btn-outline-dark">
               Show more
             </button>
