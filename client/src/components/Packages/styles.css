@@ -1,0 +1,35 @@
+.masonry-grid {
+    display: flex;
+    margin-left: -20px;
+    width: auto;
+  }
+  
+  .masonry-grid-column {
+    padding-left: 20px;
+    background-clip: padding-box;
+  }
+  
+  .package-link {
+    text-decoration: none;
+  }
+  
+  .package-item {
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .package-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+  .package-item:hover .package-image {
+    transform: scale(1.05);
+  }
+  
+  .package-name {
+    margin-top: 10px;
+    font-weight: bold;
+  }

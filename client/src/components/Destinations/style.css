@@ -1,33 +1,40 @@
-.masonry {
-  column-count: 3;
-    column-gap: 20px;
-  }
-  
-  .destination-link {
-    break-inside: avoid-column;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .destination-item {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .destination-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .destination-name {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 14px;
-  }
+.masonry-grid {
+  display: flex;
+  margin-left: -20px; /* Adjust as needed */
+  width: auto;
+}
+
+.masonry-grid-column {
+  padding-left: 20px; /* Adjust as needed */
+  background-clip: padding-box;
+}
+
+.destination-item {
+  break-inside: avoid-column;
+  position: relative;
+  overflow: hidden;
+}
+
+.destination-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.destination-image:hover {
+  transform: scale(1.1);
+}
+
+.destination-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 14px;
+}
   
   /* Style for PackageDetails component */
   .package-details {

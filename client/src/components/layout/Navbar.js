@@ -29,7 +29,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="packages " className="nav-link active ">
+              <Link to="packages" className="nav-link active ">
                 Our Packages
               </Link>
             </li>
