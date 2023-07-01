@@ -1,0 +1,59 @@
+.masonry {
+  column-count: 3;
+    column-gap: 20px;
+  }
+  
+  .destination-link {
+    break-inside: avoid-column;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .destination-item {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .destination-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .destination-name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 14px;
+  }
+  
+  /* Style for PackageDetails component */
+  .package-details {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .package-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .package-description {
+    margin-bottom: 20px;
+  }
+  
+  .book-now-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .book-now-button:hover {
+    background-color: #0056b3;
+  }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import "../Destinations/style.css"
 
 const PackageDetails = () => {
   const { packageId } = useParams();
@@ -19,9 +20,10 @@ const PackageDetails = () => {
   }
 
   return (
-    <div>
-      <h2>{packageDetails.name}</h2>
-      <p>{packageDetails.description}</p>
+    <div className='package-details'>
+      <h2 className='package-name'>{packageDetails.name}</h2>
+      <p className='package-description'>{packageDetails.description}</p>
+      <p>{packageDetails.price}</p>
     </div>
   );
 };
