@@ -23,7 +23,7 @@ function App() {
       <Route path="/packages/:packageId" element={<PackageDetails />} />
       <Route path="/sign-in" element = {<SignIn />}/>
       <Route path="/register" element = {<Register />}/>
-      <Route path="/contacts" element = {<Contacts />}/>
+      <Route path="/contacts" element = {<Contacts/>}/>
       <Route path="/feedback" element = {<Feedback />}/>
       
         

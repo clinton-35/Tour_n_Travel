@@ -44,7 +44,7 @@ function Feedback() {
         <div className="col-md-10 col-xl-8 text-center">
           <h3 className="mb-4">What do our customers have to say?</h3>
           <p className="mb-4 pb-2 mb-md-5 pb-md-0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur veniam.
+          We're proud to share the voices of our valued travelers! At Vacation Vibes, we strive to provide an exceptional travel experience for everyone. Our community of travel enthusiasts has been raving about our tours, and we're excited to share their stories with you.
           </p>
         </div>
       </div>

@@ -40,7 +40,7 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link to="Contacts " className="nav-link active ">
-                Contacts
+                Contact Us
               </Link>
             </li>
             <li className="nav-item">
