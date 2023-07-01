@@ -8,7 +8,8 @@ import Register from "./components/Register";
 import Destination from "./components/Destinations";
 import PackageDetails from "./components/Packages/details";
 import Packages from "./components/Packages";
-
+import Contacts from "./components/Contacts";
+import Feedback from "./components/Feedback";
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
       <Route path="/packages/:packageId" element={<PackageDetails />} />
       <Route path="/sign-in" element = {<SignIn />}/>
       <Route path="/register" element = {<Register />}/>
+      <Route path="/contacts" element = {<Contacts />}/>
+      <Route path="/feedback" element = {<Feedback />}/>
       
         
       </Route>
