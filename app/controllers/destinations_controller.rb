@@ -9,7 +9,7 @@ class DestinationsController < ApplicationController
 
     def show
         destination = find_destination
-        render json: destination.package
+        render json: destination
     end
 
     def create 

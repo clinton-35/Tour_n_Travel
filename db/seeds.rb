@@ -142,3 +142,4 @@ destiantion8 = Destination.create(name: "Mauritius", image:  "https://tour.epesi
 destiantion9 = Destination.create(name: "Maasai Mara", image: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdpbGRsaWZlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", package_id: package9.id)
 
 puts "✅ Done seeding!"
+
