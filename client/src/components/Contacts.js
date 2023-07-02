@@ -29,7 +29,7 @@ const Contacts = () => {
       if (response.ok) {
         alert('Thank you for your message. Our team will come back to you shortly!');
       } else {
-        alert('An error occurred. Please try again.');
+        alert('Sorry, you need to fill all spaces . Please try again.');
       }
     } catch (error) {
       console.error(error);
