@@ -141,5 +141,16 @@ destiantion7 = Destination.create(name: "Amboseli", image:  "https://tour.epesic
 destiantion8 = Destination.create(name: "Mauritius", image:  "https://tour.epesicloud.com/app/storage/uploads/37/1675755043_72_pool.jpg", package_id: package8.id)
 destiantion9 = Destination.create(name: "Maasai Mara", image: "https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdpbGRsaWZlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60", package_id: package9.id)
 
+
+#Feedbacks test data
+feedback = Feedback.create(
+  name: "Donta Bernard",
+  service_usage: "Yes",
+  feedback_text: "Seychelles with Vacation Vibes was a dream come true! The islands' natural beauty was unparalleled, with stunning beaches and lush greenery everywhere. The resort they recommended exceeded my expectations, and the excursions to Vallée de Mai and Anse Lazio were unforgettable. The attention to detail and personalized service from Vacation Vibes made the trip seamless and enjoyable. I can't wait to plan my next vacation with them."
+)
+
+
+
+
 puts "✅ Done seeding!"
 

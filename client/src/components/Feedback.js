@@ -6,35 +6,34 @@ function Feedback() {
   const [name, setName] = useState("");
   const [serviceUsage, setServiceUsage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (feedbackText.trim() === "") return;
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (feedbackText.trim() === "") return;
 
-    const feedbackData = {
-      name,
-      serviceUsage,
-      feedbackText,
-    };
+  const feedbackData = {
+    name,
+    service_usage: serviceUsage,
+    feedback_text: feedbackText, 
+  };
 
-    //API call to your Rails backend
-    fetch('/api/feedback', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(feedbackData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        
-        console.log(data);
+ 
+  fetch('/api/feedbacks', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ feedback: feedbackData }), 
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      setFeedbackText("");
+      setName("");
+      setServiceUsage("");
       
-        setFeedbackText("");
-        setName("");
-        setServiceUsage("");
-      })
-      .catch((error) => {
-        console.error(error);
+    })
+    .catch((error) => {
+      console.error(error);
       });
   };
 

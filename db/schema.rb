@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_30_025710) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_01_232701) do
   create_table "destinations", force: :cascade do |t|
     t.string "name"
     t.string "image"
@@ -18,6 +18,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_30_025710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["package_id"], name: "index_destinations_on_package_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "name"
+    t.string "service_usage"
+    t.text "feedback_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "packages", force: :cascade do |t|
