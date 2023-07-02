@@ -17,7 +17,7 @@ const handleSubmit = (e) => {
   };
 
  
-  fetch('/api/feedbacks', {
+  fetch('/feedbacks', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
