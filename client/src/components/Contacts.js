@@ -27,7 +27,7 @@ const Contacts = () => {
       setMessage('');
 
       if (response.ok) {
-        alert('Thank you for your feedback!');
+        alert('Thank you for your message. Our team will come back to you shortly!');
       } else {
         alert('An error occurred. Please try again.');
       }
