@@ -149,6 +149,12 @@ feedback = Feedback.create(
   feedback_text: "Seychelles with Vacation Vibes was a dream come true! The islands' natural beauty was unparalleled, with stunning beaches and lush greenery everywhere. The resort they recommended exceeded my expectations, and the excursions to Vallée de Mai and Anse Lazio were unforgettable. The attention to detail and personalized service from Vacation Vibes made the trip seamless and enjoyable. I can't wait to plan my next vacation with them."
 )
 
+#Contacts test data
+contact = Contact.create(
+  name: "John Doe",
+  email: "johndoe@example.com",
+  message: "Hello, I have a question."
+)
 
 
 
