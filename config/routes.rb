@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :contacts, only: [:create]
   resources :packages
   resources :destinations
   resources :feedbacks, only: [:index, :create]
