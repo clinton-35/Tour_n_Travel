@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  root 'application#index'
+
+  resources :users, only: [:index, :create, :show]
+  
+
+  post 'login', to: 'users#login'
+  
+  delete 'logout', to: 'users#logout'
   resources :admins
   resources :contacts, only: [:create]
   resources :packages
