@@ -35,6 +35,7 @@ const LoginPage = () => {
     
     
   return (
+    <div className='admin_login'>
     <div className="container my-5">
       <div className="col-md-8 mx-auto login h-100">
         <div
@@ -77,6 +78,7 @@ const LoginPage = () => {
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 };

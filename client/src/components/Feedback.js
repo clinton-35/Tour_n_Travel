@@ -44,7 +44,7 @@ const Feedback = () => {
   };
 
   return (
-    <div>
+    <div className='feedbacks'>
       <section>
         <div className="row d-flex justify-content-center">
           <div className="col-md-10 col-xl-8 text-center">

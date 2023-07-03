@@ -14,3 +14,22 @@
   padding: 15px;
 
 }
+
+.contacts{
+  min-height: 100vh;
+}
+
+.feedbacks{
+  min-height: 100vh; 
+}
+.package-details{
+  min-height: 100vh;
+}
+
+.admindashboard{
+  min-height: 100vh;
+}
+
+.admin_login{
+  min-height: 100vh;
+}
