@@ -16,11 +16,13 @@ import Create from './components/Admin/Create';
 import Read from './components/Admin/Read';
 import Update from './components/Admin/Update';
 import Delete from './components/Admin/Delete';
+import { AuthProvider } from "./components/context/Authcontext";
 
 
 function App() {
   return (
     <BrowserRouter>
+    <AuthProvider>
     <Routes>
       <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
@@ -43,6 +45,7 @@ function App() {
         
       </Route>
     </Routes>
+    </AuthProvider>
   </BrowserRouter>
   );
 }

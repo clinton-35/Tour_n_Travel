@@ -1,12 +1,19 @@
 import React,{ useContext, useState} from 'react'
-import { Container, Row, Col, Button, Form, Spinner} from 'react-bootstrap';
-
+import { Container, Row, Col, Button, Form} from 'react-bootstrap';
+import { AuthContext } from './components/context/Authcontext';
 
 const Register = () => {
-   
+    const {register} = useContext(AuthContext)
+  const [username, setUsername] = useState()
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
     
 
-
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      // Your submit logic here
+      register(username,email,password)
+    };
   return (
     <div className='register'>
         <Container className="py-5 mt-5">
@@ -15,20 +22,20 @@ const Register = () => {
                     <h1 className={`text-center border-bottom pb-3 `}>
                         Create Account
                     </h1>
-                    <Form >
+                    <Form onSubmit={handleSubmit}>
                         
                         <Form.Group className="mb-3">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control name="email" type="email" onChange={(e)=> (e.target.value) } placeholder="Email" required />
+                            <Form.Control name="email" type="email" onChange={(e)=> setEmail(e.target.value) } placeholder="Email" required />
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>Username</Form.Label>
-                            <Form.Control name="username" type="text" onChange={(e)=> (e.target.value) } placeholder="Username"  required />
+                            <Form.Control name="username" type="text" onChange={(e)=> setUsername(e.target.value) } placeholder="Username"  required />
                         </Form.Group>
 
                         <Form.Group className="mb-3">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control name="password" type="password" onChange={(e)=> (e.target.value) } placeholder="Password"  required />
+                            <Form.Control name="password" type="password" onChange={(e)=> setPassword(e.target.value) } placeholder="Password"  required />
                         </Form.Group>
                         <Button
                             type="submit"
