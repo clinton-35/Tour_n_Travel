@@ -3,7 +3,8 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { VscKey } from 'react-icons/vsc';
 import { Container, Row, Col, Button, Form, InputGroup} from 'react-bootstrap';
 import { Link } from 'react-router-dom'; 
-import { AuthContext } from './components/context/Authcontext';
+import {AuthContext} from './context/Authcontext'
+
 
 
 
