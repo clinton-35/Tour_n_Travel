@@ -10,6 +10,12 @@ import PackageDetails from "./components/Packages/details";
 import Packages from "./components/Packages";
 import Contacts from "./components/Contacts";
 import Feedback from "./components/Feedback";
+import LoginPage from "./components/Admin/LoginPage";
+import AdminDashboard from './components/Admin/AdminDashboard';
+import Create from './components/Admin/Create';
+import Read from './components/Admin/Read';
+import Update from './components/Admin/Update';
+import Delete from './components/Admin/Delete';
 
 
 function App() {
@@ -25,6 +31,14 @@ function App() {
       <Route path="/register" element = {<Register />}/>
       <Route path="/contacts" element = {<Contacts/>}/>
       <Route path="/feedback" element = {<Feedback />}/>
+      <Route path="login" element={<LoginPage />} />
+      <Route  path="my-account" element={<AdminDashboard />} />
+      <Route exact path="/admin/create" action={Create} />
+          <Route exact path="/admin/read" action={Read} />
+          <Route exact path="/admin/update" action={Update} />
+          <Route exact path="/admin/delete" action={Delete} />
+        
+      
       
         
       </Route>
