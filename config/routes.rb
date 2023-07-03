@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :admins
-  resources :contacts, only: [:create]
+  resources :contacts, only: [:index, :create]
   resources :packages
   resources :destinations
   resources :feedbacks, only: [:index, :create]
