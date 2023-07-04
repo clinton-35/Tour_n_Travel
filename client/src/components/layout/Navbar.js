@@ -56,7 +56,7 @@ function Navbar() {
               </button>
             </li>
             <li className="nav-item">
-              <Link to="login" className="nav-link active">
+              <Link to="my-account" className="nav-link active">
                 Admin
               </Link>
             </li>
