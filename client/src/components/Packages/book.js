@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './book.css'
 
 const BookNow = () => {
   const [bookingData, setBookingData] = useState({
@@ -14,7 +15,7 @@ const BookNow = () => {
     tripPreference: '',
   });
 
-  const navigation = useNavigation();
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -36,7 +37,7 @@ const BookNow = () => {
   
       if (response.ok) {
         // Redirect to a success page or display a success message
-        navigation.navigate('/booking-success');
+        navigate('/booking-success');
       } else {
         // Handle error case
         console.error('Booking submission failed');
@@ -46,10 +47,10 @@ const BookNow = () => {
     }
   };
   return (
-    <div>
+    <div className='book-now-container'>
       <h2>Book Now</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='form-group'>
           <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
