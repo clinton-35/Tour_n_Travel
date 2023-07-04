@@ -1,4 +1,4 @@
-import React, { createContext,  useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom"
 import Swal from 'sweetalert2';
 
@@ -8,12 +8,12 @@ export  function AuthProvider({ children }) {
 
 
   const nav = useNavigate() 
-  
+  const [current_user, set_currentUser] = useState();
   const [onChange, setonChange] = useState(false)
 
 
   const login = (username, password) => {
-    fetch('/login', {
+    fetch('/sessions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),
@@ -23,9 +23,9 @@ export  function AuthProvider({ children }) {
         if (response.error) {
             
           Swal.fire('Error', response.error, 'error');
-        } else if (response.message) {
+        } else if (response.success) {
             nav("/")
-          Swal.fire('Success', response.message, 'success');setonChange(!onChange)
+          Swal.fire('Success', response.success, 'success');setonChange(!onChange)
 
         } else {
           Swal.fire('Error', 'Something went wrong', 'error');
@@ -34,7 +34,7 @@ export  function AuthProvider({ children }) {
   };
   // registration
   const register = (username,email, password) => {
-    fetch('http://127.0.0.1:3000/users', {
+    fetch('/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username,email, password }),
@@ -55,12 +55,29 @@ export  function AuthProvider({ children }) {
         console.error('Error registering user:', error);
       });
   };
+  // Fetching current user
+  useEffect(() => {
+    fetch('/current_user', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response)
+        if (response.user) {
+          set_currentUser(response.user);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching current user:', error);
+      });
+  }, [onChange]);
 
   
 
   // Logging out
   const logout = () => {
-    fetch('http://127.0.0.1:3000/logout', {
+    fetch('/logout', {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     })
@@ -68,16 +85,16 @@ export  function AuthProvider({ children }) {
       .then((response) => {
         if (response.error) {
           Swal.fire('Error', response.error, 'error');
-        } else if (response.message) {
+        } else if (response.success) {
           nav('/sign-in');
-          Swal.fire('Success', response.message, 'success');
+          Swal.fire('Success', response.success, 'success');
           setonChange(!onChange);
         } else {
           Swal.fire('Error', 'Something went wrong', 'error');
         }
       })
       .catch((error) => {
-        console.error('Error registering user:', error);
+        console.error('Error logging out the user:', error);
       });
   };
 
@@ -85,7 +102,8 @@ export  function AuthProvider({ children }) {
   const contextData = {
     login,   
     logout,
-    register
+    register,
+    current_user,
   };
 
   return <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>;

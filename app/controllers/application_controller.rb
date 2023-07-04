@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   
 
-  
+   
 
   def set_session_expiry
     request.session_options[:expire_after] = 18000

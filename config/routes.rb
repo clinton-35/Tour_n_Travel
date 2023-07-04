@@ -1,13 +1,24 @@
 Rails.application.routes.draw do
   root 'application#index'
 
-  resources :users, only: [:index, :create, :show]
+  resources :users, only: [:index, :create]
+  resources :sessions, only: [:create]
+  get '/current_user', to: 'users#show'
+  delete '/logout', to: 'sessions#logout'
+  
+  
+  
   
 
-  post 'login', to: 'users#login'
+ 
   
+  
+<<<<<<< Updated upstream
   delete 'logout', to: 'users#logout'
   
+=======
+  resources :admins
+>>>>>>> Stashed changes
   resources :contacts, only: [:index, :create]
   resources :packages
   resources :destinations
