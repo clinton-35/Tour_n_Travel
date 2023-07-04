@@ -36,26 +36,50 @@ const Delete = () => {
   };
 
   return (
-    <div>
-      <h2>Delete Item</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          value={formData.title}
-          onChange={handleInputChange}
-          placeholder="Title"
-        />
-        <input
-          type="text"
-          name="description"
-          value={formData.description}
-          onChange={handleInputChange}
-          placeholder="Description"
-        />
-        {/* Add more input fields as needed */}
-        <button type="submit">Delete</button>
-      </form>
+    <div className='Delete'>
+    <div className="container my-5">
+      <div className="col-md-8 mx-auto delete h-100">
+        <div
+          className="card shadow px-3 py-5"
+          style={{ width: "600px", backgroundColor: "#E8F9FD" }}
+        >
+          <h2 className="card-title text-center">Delete Destination</h2>
+          <form className="vstack gap-2" >
+            <label htmlFor="name">Name:</label>
+            <input
+              className="form-control"
+              type="name"
+              id="name"
+              placeholder="Name"
+              
+              onChange={(e) => (e.target.value)}
+            />
+            <label htmlFor="image">Image:</label>
+            <input
+              className="form-control"
+              type="image_url"
+              id="image_url"
+              placeholder="Image_url"
+              
+              onChange={(e) => (e.target.value)}
+            />
+            <label htmlFor="package_id">Package_id:</label>
+            <input
+              className="form-control"
+              type="package_id"
+              id="package_id"
+              placeholder="Package_id"
+              
+              onChange={(e) => (e.target.value)}
+            />
+            <button className="btn btn-primary" type="submit">
+              Delete
+            </button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

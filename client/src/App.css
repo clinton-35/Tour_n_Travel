@@ -33,6 +33,15 @@
 .admin_login{
   min-height: 100vh;
 }
+.create{
+  min-height: 100vh;
+}
+.update{
+  min-height: 100vh;
+}
+.delete{
+  min-height: 100vh;
+}
 
 .c-item{
   height: 500px;

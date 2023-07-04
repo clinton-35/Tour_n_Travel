@@ -13,7 +13,6 @@ import Feedback from "./components/Feedback";
 import LoginPage from "./components/Admin/LoginPage";
 import AdminDashboard from './components/Admin/AdminDashboard';
 import Create from './components/Admin/Create';
-import Read from './components/Admin/Read';
 import Update from './components/Admin/Update';
 import Delete from './components/Admin/Delete';
 import { AuthProvider } from "./components/context/Authcontext";
@@ -37,10 +36,10 @@ function App() {
       <Route path="/feedback" element = {<Feedback />}/>
       <Route path="login" element={<LoginPage />} />
       <Route  path="my-account" element={<AdminDashboard />} />
-      <Route exact path="/admin/create" action={Create} />
-          <Route exact path="/admin/read" action={Read} />
-          <Route exact path="/admin/update" action={Update} />
-          <Route exact path="/admin/delete" action={Delete} />
+      <Route  path="/create" element={<Create/>} />
+          
+          <Route  path="/update" element={<Update/>} />
+          <Route  path="/delete" element={<Delete/>} />
         
       
       

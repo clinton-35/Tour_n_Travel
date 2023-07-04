@@ -7,12 +7,18 @@ Rails.application.routes.draw do
   post 'login', to: 'users#login'
   
   delete 'logout', to: 'users#logout'
-  resources :admins
+  
   resources :contacts, only: [:index, :create]
   resources :packages
   resources :destinations
   resources :feedbacks, only: [:index, :create]
+<<<<<<< Updated upstream
   resources :bookings, only: [:create]
+=======
+  post '/login', to: 'sessions#login'
+
+  
+>>>>>>> Stashed changes
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

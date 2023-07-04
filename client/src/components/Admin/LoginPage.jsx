@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom"
+
 
 const LoginPage = () => {
+  const nav = useNavigate()
   const [adminname, setAdminname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,7 +13,7 @@ const LoginPage = () => {
   e.preventDefault();
   
   // Send login request to the back end
-  fetch('http//localhost:/login', {
+  fetch('/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -21,7 +24,7 @@ const LoginPage = () => {
     .then((data) => {
       if (data.success) {
         // Redirect to admin pages
-        window.location.href = '/admindashboard';
+        nav ('/my-account');
       } else {
         // Show error message
         setError('You are not an admin yet.');
