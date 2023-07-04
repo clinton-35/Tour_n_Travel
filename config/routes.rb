@@ -12,13 +12,11 @@ Rails.application.routes.draw do
   resources :packages
   resources :destinations
   resources :feedbacks, only: [:index, :create]
-<<<<<<< Updated upstream
+
   resources :bookings, only: [:create]
-=======
   post '/login', to: 'sessions#login'
 
   
->>>>>>> Stashed changes
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
