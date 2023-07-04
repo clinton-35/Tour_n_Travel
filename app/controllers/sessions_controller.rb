@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     
-    def login
+    def create 
         admin = Admin.find_by(name: params[:name])
         if admin && admin.authenticate(params[:password])
           session[:admin_id] = admin.id

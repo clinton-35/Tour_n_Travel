@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :feedbacks, only: [:index, :create]
 
   resources :bookings, only: [:create]
-  post '/login', to: 'sessions#login'
+  post '/login', to: 'sessions#cteate'
 
   
 
