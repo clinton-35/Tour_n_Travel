@@ -106,25 +106,6 @@ const Contacts = () => {
             </form>
           </div>
         </div>
-
-        <div className="row">
-          <div className="col-md-12 text-center">
-            <ul className="list-unstyled mb-0">
-              <li>
-                <i className="fas fa-map-marker-alt fa-2x"></i>
-                <p>124 Moi Avenue Street, Nairobi, Kenya</p>
-              </li>
-              <li>
-                <i className="fas fa-phone mt-2 fa-2x"></i>
-                <p>+254714883717</p>
-              </li>
-              <li>
-                <i className="fas fa-envelope mt-2 fa-2x"></i>
-                <p>contact@vacationvibes.com</p>
-              </li>
-            </ul>
-          </div>
-        </div>
       </section>
     </div>
   );
