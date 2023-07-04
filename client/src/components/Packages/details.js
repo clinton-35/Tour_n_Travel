@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "../Destinations/style.css"
@@ -33,6 +33,7 @@ const PackageDetails = () => {
       <p>Price :sh {packageDetails.price}</p>
       <p>Duration: {packageDetails.duration}</p>
       <p>Rating :{packageDetails.rating}</p>
+      <button><Link to={`/packages/${packageId}/book-now`}>Book Now</Link></button>
     </div>
   );
 };

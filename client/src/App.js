@@ -17,6 +17,7 @@ import Read from './components/Admin/Read';
 import Update from './components/Admin/Update';
 import Delete from './components/Admin/Delete';
 import { AuthProvider } from "./components/context/Authcontext";
+import BookNow from "./components/Packages/book";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Route path="/destinations" element={<Destination />} />
       <Route path="/packages" element={<Packages />} />
       <Route path="/packages/:packageId" element={<PackageDetails />} />
+      <Route path="/packages/:packageId/book-now" element={<BookNow />} />
       <Route path="/sign-in" element = {<SignIn />}/>
       <Route path="/register" element = {<Register />}/>
       <Route path="/contacts" element = {<Contacts/>}/>

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function Carousel() {
   return (
-    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active c-item" data-bs-interval="2000">
+    <div id="hero-carousel" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
+        <div className="carousel-item active c-item" data-bs-interval="2000">
           <img
             src="https://images.unsplash.com/photo-1554990772-0bea55d510d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGtlbnlhJTIwd2lsZGxpZmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
             class="d-block w-100 c-img"

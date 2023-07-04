@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from './context/Authcontext';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Feedback = () => {
   const [feedbackText, setFeedbackText] = useState('');
   const [name, setName] = useState('');
   const [serviceUsage, setServiceUsage] = useState('');
+
+  const { isLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,6 +46,10 @@ const Feedback = () => {
       console.error(error);
       alert('An error occurred. Please try again.');
     }
+  };
+
+  const handleLoginRedirect = () => {
+    navigate('/sign-in', { state: { from: '/feedback' } });
   };
 
   return (
@@ -85,48 +94,78 @@ const Feedback = () => {
           </div>
         </div>
 
-        <div className="row justify-content-center mt-5">
-          <div className="col-md-8 text-center">
-            <h4 className="mb-4">Leave your feedback</h4>
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Your Name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <select
-                  className="form-control"
-                  value={serviceUsage}
-                  onChange={(e) => setServiceUsage(e.target.value)}
-                >
-                  <option value="" disabled selected>
-                    Have you used our services before?
-                  </option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <textarea
-                  className="form-control"
-                  rows="5"
-                  placeholder="Enter your feedback"
-                  value={feedbackText}
-                  onChange={(e) => setFeedbackText(e.target.value)}
-                ></textarea>
-              </div>
-              <button type="submit" className="btn btn-primary">
-                Submit Feedback
-              </button>
-            </form>
+        {isLoggedIn ? (
+          <div className="row justify-content-center mt-5">
+            <div className="col-md-8 text-center">
+              <h4 className="mb-4">Leave your feedback</h4>
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Your Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <select
+                    className="form-control"
+                    value={serviceUsage}
+                    onChange={(e) => setServiceUsage(e.target.value)}
+                  >
+                    <option value="" disabled selected>
+                      Have you used our services before?
+                    </option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <textarea
+                    className="form-control"
+                    rows="5"
+                    placeholder="Enter your feedback"
+                    value={feedbackText}
+                    onChange={(e) => setFeedbackText(e.target.value)}
+                  ></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Submit Feedback
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
-      </section>
+        ) : (
+          <div className="row justify-content-center mt-5">
+            <div className="col-md-8 text-center">
+               <p>
+  We'd love your feedback too! Please{' '}
+  <button
+    type="button"
+    className="link-button"
+    onClick={handleLoginRedirect}
+    style={{
+      background: 'none',
+      border: 'none',
+      color: '#007bff',
+      textDecoration: 'underline',
+      cursor: 'pointer',
+      fontSize: '16px',
+      fontWeight: 'bold',
+      padding: '0',
+      margin: '0',
+    }}
+  >
+    Log in
+  </button>
+  {' '}
+  to share your thoughts.
+</p>
+            </div>
+          </div>
+        )}
+    </section>
     </div>
   );
 };
