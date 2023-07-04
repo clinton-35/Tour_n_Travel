@@ -5,7 +5,7 @@ import { AuthContext } from "../context/Authcontext";
 function Navbar() {
   const { current_user, logout } = useContext(AuthContext);
 
-  console.log('current user in navbar', current_user);
+  console.log("current user in navbar", current_user);
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -37,7 +37,6 @@ function Navbar() {
                 Our Packages
               </Link>
             </li>
-
             <li className="nav-item">
               <Link to="feedback " className="nav-link active ">
                 Reviews
@@ -53,8 +52,11 @@ function Navbar() {
                 Sign in
               </Link>
             </li>
-            <li className="nav-item" >
-              <button className="nav-link btn btn-danger text-white" onClick={logout}  >
+            <li className="nav-item">
+              <button
+                className="nav-link btn btn-danger text-white"
+                onClick={logout}
+              >
                 Sign out
               </button>
             </li>
@@ -63,44 +65,35 @@ function Navbar() {
                 Admin
               </Link>
             </li>
-
-
+            <li className="nav-item">
+              <Link to="feedback" className="nav-link active">
+                Reviews
+              </Link>
+            </li>
+            <li className="nav-item">
+              <button
+                className="nav-link btn btn-danger text-white"
+                onClick={logout}
+              >
+                Sign out
+              </button>
+            </li>
+            <li className="nav-item">
+              <Link to="admin" className="nav-link active">
+                Admin
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/sign-in" className="nav-link active">
+                Sign in
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="admin" className="nav-link active">
+                Admin
+              </Link>
+            </li>
             
-              
-                <li className="nav-item">
-                  <Link to="feedback" className="nav-link active">
-                    Reviews
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <button
-                    className="nav-link btn btn-danger text-white"
-                    onClick={logout}
-                  >
-                    Sign out
-                  </button>
-                </li>
-
-                <li className="nav-item">
-                  <Link to="admin" className="nav-link active">
-                    Admin
-                  </Link>
-                </li>
-             
-              
-                <li className="nav-item">
-                  <Link to="/sign-in" className="nav-link active">
-                    Sign in
-                  </Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link to="admin" className="nav-link active">
-                    Admin
-                  </Link>
-                </li>
-             
->>>>>>> Stashed changes
           </ul>
         </div>
       </div>
