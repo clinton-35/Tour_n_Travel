@@ -21,15 +21,30 @@ const BookNow = () => {
     setBookingData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Perform booking submission logic here
-    // You can send the bookingData to your API or perform any other necessary action
-
-    // Redirect to a success page or display a success message
-    navigation.navigate('BookingSuccess');
+    try {
+      // Perform booking submission logic here
+      // You can send the bookingData to your API or perform any other necessary action
+      const response = await fetch('/bookings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+  
+      if (response.ok) {
+        // Redirect to a success page or display a success message
+        navigation.navigate('/booking-success');
+      } else {
+        // Handle error case
+        console.error('Booking submission failed');
+      }
+    } catch (error) {
+      console.error('Booking submission error:', error);
+    }
   };
-
   return (
     <div>
       <h2>Book Now</h2>
