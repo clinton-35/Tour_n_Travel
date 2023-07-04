@@ -139,29 +139,29 @@ const Feedback = () => {
         ) : (
           <div className="row justify-content-center mt-5">
             <div className="col-md-8 text-center">
-              <p>
-                Please{' '}
-                <button
-  type="button"
-  className="link-button"
-  onClick={handleLoginRedirect}
-  style={{
-    background: 'none',
-    border: 'none',
-    color: '#007bff',
-    textDecoration: 'underline',
-    cursor: 'pointer',
-    fontSize: '16px',
-    fontWeight: 'bold',
-    padding: '0',
-    margin: '0',
-  }}
->
-  Log In
-</button>
-{' '}
-                to Submit Feedback.
-              </p>
+               <p>
+  We'd love your feedback too! Please{' '}
+  <button
+    type="button"
+    className="link-button"
+    onClick={handleLoginRedirect}
+    style={{
+      background: 'none',
+      border: 'none',
+      color: '#007bff',
+      textDecoration: 'underline',
+      cursor: 'pointer',
+      fontSize: '16px',
+      fontWeight: 'bold',
+      padding: '0',
+      margin: '0',
+    }}
+  >
+    Log in
+  </button>
+  {' '}
+  to share your thoughts.
+</p>
             </div>
           </div>
         )}
