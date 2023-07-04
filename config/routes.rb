@@ -13,12 +13,7 @@ Rails.application.routes.draw do
  
   
   
-<<<<<<< Updated upstream
-  delete 'logout', to: 'users#logout'
-  
-=======
   resources :admins
->>>>>>> Stashed changes
   resources :contacts, only: [:index, :create]
   resources :packages
   resources :destinations
