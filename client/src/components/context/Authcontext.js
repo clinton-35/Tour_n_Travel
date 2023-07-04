@@ -23,9 +23,9 @@ export  function AuthProvider({ children }) {
         if (response.error) {
             
           Swal.fire('Error', response.error, 'error');
-        } else if (response.success) {
+        } else if (response.message) {
             nav("/")
-          Swal.fire('Success', response.success, 'success');setonChange(!onChange)
+          Swal.fire('Success', response.message, 'success');setonChange(!onChange)
 
         } else {
           Swal.fire('Error', 'Something went wrong', 'error');
@@ -34,7 +34,7 @@ export  function AuthProvider({ children }) {
   };
   // registration
   const register = (username,email, password) => {
-    fetch('/users', {
+    fetch('http://127.0.0.1:3000/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username,email, password }),
@@ -60,7 +60,7 @@ export  function AuthProvider({ children }) {
 
   // Logging out
   const logout = () => {
-    fetch('/logout', {
+    fetch('http://127.0.0.1:3000/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     })
