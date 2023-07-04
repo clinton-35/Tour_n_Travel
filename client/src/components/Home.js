@@ -13,6 +13,7 @@ function Home() {
             alt="image loading..."
           /> */}
       </div>
+      <h1 className="text-center">Our Destinations</h1>
       <div>
         <Destination />
       </div>

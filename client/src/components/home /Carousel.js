@@ -14,7 +14,7 @@ function Carousel() {
           <div class="carousel-caption d-none d-md-block">
             <h5>Visit The Maasai Mara</h5>
             <Link to="destinations">
-              <button type="button" class="btn btn-outline-dark">
+              <button type="button" class="btn btn-outline-info">
                 Show more
               </button>
             </Link>
@@ -27,9 +27,9 @@ function Carousel() {
             alt="slide 2"
           />
           <div class="carousel-caption d-none d-md-block">
-            <h5>See The Drylands of Kenya</h5>
+            <h5 className="text-secondary">See The Drylands of Kenya</h5>
             <Link to="destinations">
-              <button type="button" class="btn btn-outline-dark">
+              <button type="button" class="btn btn-outline-info">
                 Show more
               </button>
             </Link>
@@ -42,9 +42,9 @@ function Carousel() {
             alt="slide 3"
           />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Explore The Coolest City of Africa</h5>
+            <h5 className="text-secondary">Explore The Coolest City of Africa</h5>
             <Link to="destinations">
-              <button type="button" class="btn btn-outline-dark">
+              <button type="button" class="btn btn-outline-info">
                 Show more
               </button>
             </Link>
@@ -57,9 +57,9 @@ function Carousel() {
             alt="slide 3"
           />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Experience The Pink Carpet</h5>
+            <h5 className="text-secondary">Experience The Pink Carpet</h5>
             <Link to="destinations">
-              <button type="button" class="btn btn-outline-dark">
+              <button type="button" class="btn btn-outline-info">
                 Show more
               </button>
             </Link>
@@ -72,9 +72,9 @@ function Carousel() {
             alt="slide 3"
           />
           <div class="carousel-caption d-none d-md-block">
-            <h5>Chill and Dine On The Beaches</h5>
+            <h5 >Chill and Dine On The Beaches</h5>
             <Link to="destinations">
-              <button type="button" class="btn btn-outline-dark">
+              <button type="button" class="btn btn-outline-info">
                 Show more
               </button>
             </Link>
