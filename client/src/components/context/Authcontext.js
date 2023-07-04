@@ -61,12 +61,12 @@ export  function AuthProvider({ children }) {
   // Logging out
   const logout = () => {
     fetch('http://127.0.0.1:3000/logout', {
-      method: 'POST',
+      method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
     })
       .then((res) => res.json())
       .then((response) => {
-        Swal.fire('Success', response.success, 'success');
+        Swal.fire('Success', response.message, 'success');
         nav('/sign-in')
         
         setonChange(!onChange)

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+    
     def index
       users = User.all
       render json: users
@@ -42,17 +42,10 @@ class UsersController < ApplicationController
       end
     end
   
-    
-  
     def logout
       session.delete(:user_id)
       render json: { message: 'Logged out successfully' }
     end
-
-    
-  
- 
-  
 
 end
   
