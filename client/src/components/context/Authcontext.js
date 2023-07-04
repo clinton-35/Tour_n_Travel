@@ -66,15 +66,21 @@ export  function AuthProvider({ children }) {
     })
       .then((res) => res.json())
       .then((response) => {
-        Swal.fire('Success', response.message, 'success');
-        nav('/sign-in')
-        
-        setonChange(!onChange)
+        if (response.error) {
+          Swal.fire('Error', response.error, 'error');
+        } else if (response.message) {
+          nav('/sign-in');
+          Swal.fire('Success', response.message, 'success');
+          setonChange(!onChange);
+        } else {
+          Swal.fire('Error', 'Something went wrong', 'error');
+        }
       })
       .catch((error) => {
-        console.error('Error logging out:', error);
+        console.error('Error registering user:', error);
       });
   };
+
 
   const contextData = {
     login,   
