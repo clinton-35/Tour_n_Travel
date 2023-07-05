@@ -4,15 +4,15 @@ import './book.css';
 
 const BookNow = () => {
   const [bookingData, setBookingData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
-    checkInDate: '',
-    checkOutDate: '',
+    check_in_date: '',
+    check_out_date: '',
     adults: '',
     children: '',
-    tripPreference: '',
+    trip_preference: '',
   });
 
   const [errors, setErrors] = useState([]);
@@ -66,8 +66,8 @@ const BookNow = () => {
           <label htmlFor='firstName'>First Name:</label>
           <input
             type='text'
-            id='firstName'
-            name='firstName'
+            id='first_name'
+            name='first_name'
             value={bookingData.first_name}
             onChange={handleInputChange}
           />
@@ -77,8 +77,8 @@ const BookNow = () => {
           <input
             type='text'
             id='last_name'
-            name='lastName'
-            value={bookingData.lastName}
+            name='last_name'
+            value={bookingData.last_name}
             onChange={handleInputChange}
           />
         </div>
@@ -106,9 +106,9 @@ const BookNow = () => {
           <label htmlFor='checkInDate'>Check-in Date:</label>
           <input
             type='date'
-            id='checkInDate'
-            name='checkInDate'
-            value={bookingData.checkInDate}
+            id='check_in_date'
+            name='check_in_date'
+            value={bookingData.check_in_date}
             onChange={handleInputChange}
           />
         </div>
@@ -116,9 +116,9 @@ const BookNow = () => {
           <label htmlFor='checkOutDate'>Check-out Date:</label>
           <input
             type='date'
-            id='checkOutDate'
-            name='checkOutDate'
-            value={bookingData.checkOutDate}
+            id='check_out_date'
+            name='check_out_date'
+            value={bookingData.check_out_date}
             onChange={handleInputChange}
           />
         </div>

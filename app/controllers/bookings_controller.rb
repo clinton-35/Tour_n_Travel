@@ -16,3 +16,4 @@ class BookingsController < ApplicationController
     render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
   end
 end
+
