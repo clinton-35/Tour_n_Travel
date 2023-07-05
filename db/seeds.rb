@@ -167,5 +167,5 @@ admin5 = Admin.create(name:'Denis', email: 'denis@gmail.com', password: 'denis12
 
 
 
-puts "✅ Done seeding!"
+ puts "✅ Done seeding!"
 
