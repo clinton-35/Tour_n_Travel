@@ -68,7 +68,7 @@ const BookNow = () => {
             type='text'
             id='firstName'
             name='firstName'
-            value={bookingData.firstName}
+            value={bookingData.first_name}
             onChange={handleInputChange}
           />
         </div>
@@ -76,7 +76,7 @@ const BookNow = () => {
           <label htmlFor='lastName'>Last Name:</label>
           <input
             type='text'
-            id='lastName'
+            id='last_name'
             name='lastName'
             value={bookingData.lastName}
             onChange={handleInputChange}
