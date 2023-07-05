@@ -17,6 +17,7 @@ import Update from './components/Admin/Update';
 import Delete from './components/Admin/Delete';
 import { AuthProvider } from "./components/context/Authcontext";
 import BookNow from "./components/Packages/book";
+import BookingSuccess from "./components/Packages/success";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/packages" element={<Packages />} />
       <Route path="/packages/:packageId" element={<PackageDetails />} />
       <Route path="/packages/:packageId/book-now" element={<BookNow />} />
+      <Route path="booking-success" element={<BookingSuccess />} />
       <Route path="/sign-in" element = {<SignIn />}/>
       <Route path="/register" element = {<Register />}/>
       <Route path="/contacts" element = {<Contacts/>}/>
