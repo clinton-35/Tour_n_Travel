@@ -65,34 +65,8 @@ function Navbar() {
                 Admin
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="feedback" className="nav-link active">
-                Reviews
-              </Link>
-            </li>
-            <li className="nav-item">
-              <button
-                className="nav-link btn btn-danger text-white"
-                onClick={logout}
-              >
-                Sign out
-              </button>
-            </li>
-            <li className="nav-item">
-              <Link to="admin" className="nav-link active">
-                Admin
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/sign-in" className="nav-link active">
-                Sign in
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="admin" className="nav-link active">
-                Admin
-              </Link>
-            </li>
+            
+           
             
           </ul>
         </div>
