@@ -8,6 +8,8 @@ const Feedback = () => {
   const [serviceUsage, setServiceUsage] = useState('');
 
   const { isLoggedIn } = useContext(AuthContext);
+
+  console.log('loggedd in',isLoggedIn)
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {

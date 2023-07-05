@@ -38,7 +38,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="feedback " className="nav-link active ">
+              <Link to="/feedback " className="nav-link active ">
                 Reviews
               </Link>
             </li>
