@@ -6,21 +6,21 @@ Rails.application.routes.draw do
   get '/current_user', to: 'users#show'
   delete '/logout', to: 'sessions#logout'
   
-  
+  post '/login', to: 'admins#login' # admin route 
   
   
 
  
   
   
-  resources :admins
+  
   resources :contacts, only: [:index, :create]
   resources :packages
   resources :destinations
   resources :feedbacks, only: [:index, :create]
 
   resources :bookings, only: [:create]
-  post '/login', to: 'sessions#cteate'
+  
 
   
 
