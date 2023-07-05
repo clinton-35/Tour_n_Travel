@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def create
     username = params[:username]
     email = params[:email]

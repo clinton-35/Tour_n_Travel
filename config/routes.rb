@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
   root 'application#index'
 
-  resources :users, only: [:index, :create]
+  resources :users, only: [:index]
   resources :sessions, only: [:create]
+  resources :admins
+  
+  # users route
+  post'/users', to: 'users#create'
   get '/current_user', to: 'users#show'
   delete '/logout', to: 'sessions#logout'
+  post "/login", to: 'sessions#create'
   
-  post '/login', to: 'admins#login' # admin route 
+  #admin routes
+  post '/loginadmin', to: 'sessions#login'
+  delete '/logout', to: 'sessions#destroy'
+  post "/signup", to: "users#create"
+  get "/me", to: "users#show"
   
   
 

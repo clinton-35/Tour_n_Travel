@@ -36,12 +36,11 @@ function App() {
       <Route path="/register" element = {<Register />}/>
       <Route path="/contacts" element = {<Contacts/>}/>
       <Route path="/feedback" element = {<Feedback />}/>
-      <Route path="login" element={<LoginPage />} />
-      <Route  path="my-account" element={<AdminDashboard />} />
-      <Route  path="/create" element={<Create/>} />
-          
-          <Route  path="/update" element={<Update/>} />
-          <Route  path="/delete" element={<Delete/>} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route  path="/my-account" element={<AdminDashboard />} />
+      <Route  path="create" element={<Create/>} />
+      <Route  path="/update" element={<Update/>} />
+      <Route  path="/delete" element={<Delete/>} />
         
       
       

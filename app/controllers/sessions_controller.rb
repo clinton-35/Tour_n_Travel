@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-    
-  
   def create
     username = params[:username]
     password = params[:password]
@@ -18,32 +16,31 @@ class SessionsController < ApplicationController
       render json: { error: "Please fill out all the fields" }, status: :not_acceptable
     end
   end
-    
 
   def logout
-      session.delete(:user_id)
-      render json: { success: 'You are now logged out' }
+    session.delete(:user_id)
+    render json: { success: 'You are now logged out' }
   end
+
+  # Admin sessions
 
   def login
-    name = params[:name]
-    email = params[:email]
-    password = params[:password]
+    admin = Admin.find_by(name: params[:name])
 
-    if name.present? && email.present? && password.present?
-      admin = Admin.find_by(name: name)
-
-      if admin&.authenticate(password)
-        session[:admin_id] = admin.id
-        render json: { success: "You are logged in" }
-      else
-        render json: { error: "Invalid credentials" }, status: :unauthorized
-      end
+    if admin&.authenticate(params[:password])
+      session[:admin_id] = admin.id
+      render json: admin, status: :created
     else
-      render json: { error: "Please fill out all the fields" }, status: :not_acceptable
+      render json: { errors: ['Invalid name or password'] }, status: :unauthorized
     end
   end
-    
 
-
+  def destroy
+    if session[:admin_id]
+      session[:admin_id] = nil
+      render json: {}, status: :created
+    else
+      render json: { errors: ['Not logged in'] }, status: :unauthorized
+    end
+  end
 end
