@@ -8,4 +8,5 @@ class Package < ApplicationRecord
     validates :image, presence: true
 
     has_many :destinations
+    
 end
