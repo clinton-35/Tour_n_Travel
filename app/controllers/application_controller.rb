@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    render html: "<h1>Welcome to stop 'n shop backend</h1>".html_safe
+    render html: "tour & travel".html_safe
   end
 end

@@ -7,6 +7,6 @@ class Package < ApplicationRecord
     validates :rating, presence: true
     validates :image, presence: true
 
-    has_many :destinations
+    has_many :destinations, dependent: :destroy
     
 end

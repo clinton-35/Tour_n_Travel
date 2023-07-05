@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 
 const Delete = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    image_url: '',
-    package_id: '',
+    id: '', // Assuming you have an 'id' field for specifying the destination ID
   });
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
@@ -21,12 +19,11 @@ const Delete = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch(`http://127.0.0.1:3000/destinations/1`, {
+    fetch(`http://127.0.0.1:3000/packages`, { // Use the destination ID in the URL
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
     })
       .then((response) => {
         setIsLoading(false);
@@ -54,33 +51,15 @@ const Delete = () => {
             className="card shadow px-3 py-5"
             style={{ width: '600px', backgroundColor: '#E8F9FD' }}
           >
-            <h2 className="card-title text-center">Delete Destination</h2>
+            <h2 className="card-title text-center">Delete Package</h2>
             <form onSubmit={handleSubmit} className="vstack gap-2">
-              <label htmlFor="name">Name:</label>
+              <label htmlFor="id">ID:</label>
               <input
                 className="form-control"
                 type="text"
-                id="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleInputChange}
-              />
-              <label htmlFor="image_url">Image:</label>
-              <input
-                className="form-control"
-                type="text"
-                id="image_url"
-                placeholder="Image URL"
-                value={formData.image_url}
-                onChange={handleInputChange}
-              />
-              <label htmlFor="package_id">Package ID:</label>
-              <input
-                className="form-control"
-                type="text"
-                id="package_id"
+                id="id"
                 placeholder="Package ID"
-                value={formData.package_id}
+                value={formData.id}
                 onChange={handleInputChange}
               />
               <button className="btn btn-primary" type="submit">
