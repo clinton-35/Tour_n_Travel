@@ -36,7 +36,7 @@ const Create = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch('/destination', {
+    fetch('/destinations', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const Create = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    fetch('/package', {
+    fetch('/packages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
