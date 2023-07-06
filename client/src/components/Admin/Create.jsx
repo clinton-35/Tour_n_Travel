@@ -80,7 +80,8 @@ const Create = () => {
     <div className="container my-5">
       <div className="row">
         <div className="col-md-6">
-          <div className="card shadow px-3 py-5 mb-4">
+          <div className="card shadow px-3 py-5 mb-4"
+            style={{ width: '600px', backgroundColor: '#E8F9FD' }}>
             <h2 className="card-title text-center">Create Destination</h2>
             <form onSubmit={handleDestinationSubmit} className="vstack gap-2">
               <label htmlFor="name">Name:</label>
@@ -117,7 +118,8 @@ const Create = () => {
           </div>
         </div>
         <div className="col-md-6">
-          <div className="card shadow px-3 py-5">
+          <div className="card shadow px-3 py-5"
+           style={{ width: '600px', backgroundColor: '#E8F9FD' }}>
             <h2 className="card-title text-center">Create Package</h2>
             <form onSubmit={handlePackageSubmit} className="vstack gap-2">
               <label htmlFor="name">Name:</label>
