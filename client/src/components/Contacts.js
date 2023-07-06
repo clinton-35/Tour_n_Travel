@@ -4,6 +4,8 @@ const Contacts = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,18 +29,19 @@ const Contacts = () => {
       setMessage('');
 
       if (response.ok) {
-        alert('Thank you for your message. Our team will come back to you shortly!');
+        setSuccessMessage('Thank you for your message. Our team will come back to you shortly!');
       } else {
-        alert('Sorry, you need to fill all spaces . Please try again.');
+        const errorData = await response.json();
+        setErrorMessage(errorData.errors);
       }
     } catch (error) {
       console.error(error);
-      alert('An error occurred. Please try again.');
+      setErrorMessage('An error occurred. Please try again.');
     }
   };
 
   return (
-    <div className='contacts'>
+    <div className="contacts">
       <section className="mb-4">
         <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
         <p className="text-center w-responsive mx-auto mb-3">
@@ -49,6 +52,10 @@ const Contacts = () => {
         <div className="row justify-content-center">
           <div className="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form">
+              {errorMessage && (
+                <div className="alert alert-danger">{errorMessage}</div>
+              )}
+
               <div className="row">
                 <div className="col-md-6">
                   <div className="md-form mb-0">
@@ -68,7 +75,7 @@ const Contacts = () => {
                 <div className="col-md-6">
                   <div className="md-form mb-0">
                     <input
-                      type="text"
+                      type="email"
                       id="email"
                       name="email"
                       className="form-control"
@@ -102,7 +109,13 @@ const Contacts = () => {
                   Send
                 </button>
               </div>
-              <div className="status"></div>
+              {successMessage && (
+                <div className="cardmt-4">
+                  <div className="card-body">
+                    <p className="card-text">{successMessage}</p>
+                  </div>
+                </div>
+              )}
             </form>
           </div>
         </div>
