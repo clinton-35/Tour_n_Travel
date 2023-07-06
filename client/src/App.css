@@ -27,20 +27,15 @@
 }
 
 .admindashboard{
-  min-height: 100vh;
+  min-height: 63vh;
 }
 
 .admin_login{
-  min-height: 100vh;
+  min-height: 63vh;
 }
-.create{
-  min-height: 100vh;
-}
-.update{
-  min-height: 100vh;
-}
-.delete{
-  min-height: 100vh;
+
+.Create{
+min-height: 50vh;
 }
 
 .c-item{
