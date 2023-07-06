@@ -4,7 +4,7 @@ const Contacts = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errors, setErrors] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = async (e) => {
@@ -31,17 +31,30 @@ const Contacts = () => {
       if (response.ok) {
         setSuccessMessage('Thank you for your message. Our team will come back to you shortly!');
       } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.errors);
+        const responseData = await response.json();
+        if (responseData.errors) {
+          setErrors(responseData.errors);
+        } else {
+          console.error('contact submission failed');
+        }
       }
     } catch (error) {
       console.error(error);
-      setErrorMessage('An error occurred. Please try again.');
+      setErrors(['An error occurred. Please try again.']);
     }
   };
 
   return (
     <div className="contacts">
+      {errors.length > 0 && (
+        <div className="error-container">
+          <ul>
+            {errors.map((error, index) => (
+              <li key={index}>{error}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       <section className="mb-4">
         <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
         <p className="text-center w-responsive mx-auto mb-3">
@@ -52,10 +65,6 @@ const Contacts = () => {
         <div className="row justify-content-center">
           <div className="col-md-9 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form">
-              {errorMessage && (
-                <div className="alert alert-danger">{errorMessage}</div>
-              )}
-
               <div className="row">
                 <div className="col-md-6">
                   <div className="md-form mb-0">
@@ -110,7 +119,7 @@ const Contacts = () => {
                 </button>
               </div>
               {successMessage && (
-                <div className="cardmt-4">
+                <div className="card mt-4">
                   <div className="card-body">
                     <p className="card-text">{successMessage}</p>
                   </div>
