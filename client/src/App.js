@@ -18,12 +18,15 @@ import Delete from './components/Admin/Delete';
 import { AuthProvider } from "./components/context/Authcontext";
 import BookNow from "./components/Packages/book";
 import BookingSuccess from "./components/Packages/success";
+import PostProvider from "./components/context/Postcontext";
 
 
 function App() {
   return (
     <BrowserRouter>
     <AuthProvider>
+    <PostProvider>
+
     <Routes>
       <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
@@ -47,6 +50,7 @@ function App() {
         
       </Route>
     </Routes>
+    </PostProvider>
     </AuthProvider>
   </BrowserRouter>
   );
