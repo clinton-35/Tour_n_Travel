@@ -114,7 +114,7 @@ const Feedback = () => {
 
         <div className="row justify-content-center mt-5">
           <div className="col-md-8 text-center">
-            <h4 className="mb-4">Leave your feedback</h4>
+            <h4 className="mb-4">We'd love to hear your feedback too! Please share your thoughts.</h4>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <input
@@ -158,13 +158,6 @@ const Feedback = () => {
             )}
           </div>
         </div>
-
-        <div className="row justify-content-center mt-5">
-          <div className="col-md-8 text-center">
-            <p>We'd love to hear your feedback too! Please share your thoughts.</p>
-          </div>
-        </div>
-
         <div className="row justify-content-center mt-5">
           <div className="col-md-8 text-center">
             <h4>Recent Feedbacks</h4>
