@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   #admin routes
   post '/loginadmin', to: 'sessions#login'
   delete '/logout', to: 'sessions#destroy'
-  post "/signup", to: "users#create"
-  get "/me", to: "users#show"
+  post "/signup", to: "adminss#create"
+  get "/me", to: "admins#show"
   
   
 
@@ -26,15 +26,9 @@ Rails.application.routes.draw do
   resources :contacts, only: [:index, :create]
   resources :packages
   resources :destinations
-  resources :feedbacks, only: [:index, :create]
+  resources :feedbacks
 
   resources :bookings, only: [:create]
   
 
-  
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

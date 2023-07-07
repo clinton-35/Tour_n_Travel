@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  
   def create
     username = params[:username]
     email = params[:email]
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
       else
         user = User.create(username: username, email: email, password: password)
 
-        if user.save
+        if user.valid?
           render json: { success: "Account created successfully" }
         else
           render json: { error: "Error creating the account" }, status: 500
@@ -28,12 +27,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    users = User.all 
+    users = User.all
     render json: users
   end
 
   def show
-    puts "Session ID: #{session[:user_id]}"
     if session[:user_id].present?
       user = User.find_by(id: session[:user_id])
       if user
@@ -42,10 +40,7 @@ class UsersController < ApplicationController
         render json: { error: 'User not found' }, status: :unprocessable_entity
       end
     else
-      render json: { error: 'No one is logged in' }, status: :unprocessable_entity
+      render json: { error: 'No user is logged in' }, status: :unprocessable_entity
     end
   end
-  
-  
-
 end
