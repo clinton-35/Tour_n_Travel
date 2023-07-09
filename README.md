@@ -43,7 +43,7 @@ This repository contains the source code for an Tour & Travel website that allow
 
 ## Contributing
 
-Contributions to the E-commerce website project are welcome. If you have any bug fixes, feature implementations, or suggestions, please submit a pull request or open an issue.
+Contributions to the Tour & Travel website project are welcome. If you have any bug fixes, feature implementations, or suggestions, please submit a pull request or open an issue.
 
 ## License
 
