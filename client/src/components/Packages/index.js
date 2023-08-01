@@ -26,13 +26,17 @@ const Packages = () => {
               <img
                 src={pkg.image.split(',')[0].trim()}
                 alt="Package"
-                className="package-image"
+                className="package-image rounded"
               />
             ) : (
               <Carousel>
                 {pkg.image.split(',').map((imageUrl, index) => (
                   <div key={index}>
-                    <img src={imageUrl.trim()} alt={`Img ${index + 1}`} className="package-image" />
+                    <img
+                      src={imageUrl.trim()}
+                      alt={`Img ${index + 1}`}
+                      className="package-image rounded"
+                    />
                   </div>
                 ))}
               </Carousel>
